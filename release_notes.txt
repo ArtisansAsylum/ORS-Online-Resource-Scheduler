@@ -1,0 +1,30 @@
+Notes:
+For complete Installation and upgrade instructions, 
+see the file "install_instructions.html" in the ZIP or TAR/GZIP 
+file or on the documentation Wiki on the ORS web site:
+   https://sourceforge.net/apps/mediawiki/ors/
+
+Changes:
+Version 3.8.1
+* Added "Sent from scheduling system at..." footer to e-mails sent by scheduler
+   (so users know where it came from)
+* re-fix changes associated several features (see below). These changes had 
+   been in the 3.7 beta but got lost in the 3.8 merge.
+* Fix bugs in Daylight Savings Time (caused duplicate dates to appear in 
+   calendar)
+* Fix display bugs in days without signups
+* Fix use of usleep on windows platforms (don't - use loop)
+* Fix display on signups which don't end at a time-block transition
+
+Version 3.8
+* Switched to use of $_SERVER and $_ENV instead of $HTTP_zzz_VARS
+* Removed some uses of Globals (now only used if available - will speed up some 
+   operations but not necessary)
+* Updated license for new version #
+* PHP 5.x compatibility changes. 
+* Changed all $HTTP_POST_VARS and $HTTP_GET_VARS to be $_POST and $_GET
+* Fix for DST bug
+* Add footer on messages (sent from scheduler)
+* Changed to use usleep instead of loop
+* Fix to allow short time period (<30 minutes) intervals
+* Fix for 5.0 which assures empty start or end times are considered zero and do not give warnings
